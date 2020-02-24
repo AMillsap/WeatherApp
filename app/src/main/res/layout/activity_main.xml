@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etEnterZipCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint = "Enter Zip Code"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnFindWeather"/>
+
+    <Button
+        android:id="@+id/btnFindWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get the Weather"
+        android:onClick="onClick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnChangeMetric"
+        app:layout_constraintTop_toBottomOf="@+id/etEnterZipCode"
+        app:layout_constraintBottom_toTopOf="@+id/frmFragmentCurrentWeather"/>
+    <Button
+        android:id="@+id/btnChangeMetric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="°F/°C"
+        android:onClick="onClick"
+        app:layout_constraintStart_toEndOf="@+id/btnFindWeather"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEnterZipCode"
+        app:layout_constraintBottom_toTopOf="@+id/frmFragmentCurrentWeather"/>
+
+    <FrameLayout
+        android:id="@+id/frmFragmentCurrentWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnFindWeather"
+        app:layout_constraintBottom_toTopOf="@+id/frmFragmentHourlyWeather"/>
+
+    <FrameLayout
+        android:id="@+id/frmFragmentHourlyWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/frmFragmentCurrentWeather"/>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
